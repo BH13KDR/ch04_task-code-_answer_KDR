@@ -53,30 +53,32 @@ CREATE TABLE Reservation_Services (
 );
 
 
-INSERT INTO Owners (ownerID, name, phone_number) 
-VALUES (1, 홍길동, 01012345678)
+INSERT INTO Owners (name, phone_number) 
+VALUES ('홍길동', '01012345678');
 
-INSERT INTO Pets (petID, ownerID, name, breed, weight)
-VALUES (1, 1, 복날이, 시고르자브종, 20)
+INSERT INTO Pets (ownerID, name, breed, weight)
+VALUES (1, '복날이', '시고르자브종', 20);
 
-INSERT INTO Rooms (roomID, room_number, room_class, room_price)
-VALUES (1, 101, 노말, 5)
-VALUES (2, 102, 노말, 5)
-VALUES (3, 201, 레어, 7)
-VALUES (4, 202, 레어, 7)
-VALUES (5, 301, 에픽, 10)
-VALUES (6, 302, 에픽, 10)
+INSERT INTO Rooms (room_number, room_class, room_price)
+VALUES 
+('101', '노말', 5),
+('102', '노말', 5),
+('201', '레어', 7),
+('202', '레어', 7),
+('301', '에픽', 10),
+('302', '에픽', 10);
 
-INSERT INTO Services (serviceID, service_type, price)
-VALUES (1, '산책', 1)
-VALUES (2, '목욕', 2)
-VALUES (3, '미용', 3)
+INSERT INTO Services (service_type, price)
+VALUES 
+('산책', 1),
+('목욕', 2),
+('미용', 3);
 
-INSERT INTO Reservations (reservationID, petID, roomID, check_in, check_out, created_at)
-VALUES (1, 1, 1, 25-08-05, 25-08-06, 25-07-24 13:52:03)
+INSERT INTO Reservations (petID, roomID, check_in, check_out, created_at)
+VALUES (1, 1, '2025-08-05', '2025-08-06', '2025-07-24 13:52:03');
 --복날이가 101호에 8월 5일 부터 6일까지, 지금 예약함.
 
-INSERT INTO Reservation_Services (reservationID, serviceID)
-VALUES (1, 2)
---복날이의 목욕 서비스가 추가 됨
 
+INSERT INTO Reservation_Services (reservationID, serviceID)
+VALUES (1, 2);
+--복날이의 목욕 서비스가 추가 됨
